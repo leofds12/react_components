@@ -1,16 +1,54 @@
-# React + Vite
+# Tarjetas de perfil (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de práctica para el curso de React. Muestra una lista de tarjetas con foto, nombre, profesión y descripción.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 18 o superior
+- npm
 
-## React Compiler
+## Instalación
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+## Uso
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Levantar el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+Abrir en el navegador la dirección que muestra la consola (por defecto `http://localhost:5173`).
+
+## Scripts
+
+| Comando           | Descripción                               |
+| ----------------- | ----------------------------------------- |
+| `npm run dev`     | Servidor de desarrollo                    |
+| `npm run build`   | Genera la versión de producción en `dist` |
+| `npm run preview` | Sirve localmente la versión de producción |
+| `npm run lint`    | Revisa el código con ESLint               |
+
+## Estructura
+
+```
+src/
+├── App.jsx                      # Lista de tarjetas
+├── App.css                      # Estilos del contenedor
+├── assets/                      # Imágenes
+└── components/
+    └── Tarjeta/
+        ├── Tarjeta.jsx          # Componente de una tarjeta
+        └── Tarjeta.css          # Estilos de la tarjeta
+```
+
+## Alias
+
+`@assets` apunta a `src/assets` (configurado en `vite.config.js`):
+
+```js
+import ing_img from '@assets/ing.jpeg'
+```
